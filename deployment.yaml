@@ -18,7 +18,7 @@ spec:
       - name: docker-practice
         image: shiva1415/docker-practice:20250910102038
         ports:
-        - containerPort: 80
+        - containerPort: 9000
           resources:
           requests:
             cpu: "100m"
@@ -26,4 +26,5 @@ spec:
           limits:
             cpu: "500m"
             memory: "256Mi"
+
 
