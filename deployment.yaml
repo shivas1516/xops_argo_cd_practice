@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring_app
+  labels:
+    app: spring_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring_app
+  template:
+    metadata:
+      labels:
+        app: spring_app
+    spec:
+      containers:
+      - name: docker-practice
+        image: shiva1415/docker-practice:latest
+        ports:
+        - containerPort: 80
+          resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
