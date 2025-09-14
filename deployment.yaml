@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: docker-practice
-        image: shiva1415/docker-practice:20250914120343
+        image: shiva1415/docker-practice:20250914140313
         ports:
         - containerPort: 9000
         env:
