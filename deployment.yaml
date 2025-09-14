@@ -19,6 +19,17 @@ spec:
         image: shiva1415/docker-practice:20250910111353
         ports:
         - containerPort: 9000
+        env:
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: username 
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: password
           resources:
           requests:
             cpu: "100m"
@@ -26,5 +37,6 @@ spec:
           limits:
             cpu: "500m"
             memory: "256Mi"
+
 
 
